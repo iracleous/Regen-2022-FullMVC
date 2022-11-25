@@ -5,8 +5,8 @@ namespace Regen_2022.MyDbContext
 {
     public class EshopDbContext:DbContext
     {
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerCategory> CustomerCategories { get; set; }
+        public DbSet<Customer> Customers   => Set<Customer>();
+        public DbSet<CustomerCategory> CustomerCategories => Set<CustomerCategory>();
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

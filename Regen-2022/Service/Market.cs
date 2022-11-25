@@ -18,16 +18,13 @@ namespace Regen_2022.Service
             return await _context.Customers.ToListAsync();
         }
 
-     
 
-        public async Task<Customer> ReadAsync(int? customerId)
-        {
-            return await _context
-                .Customers
+
+        public async Task<Customer> ReadAsync(int? customerId) => 
+            await _context
+                 .Customers
                  .Include(customer => customer.CustomerCategory)
-                .FirstOrDefaultAsync(m => m.Id == customerId);
-        }
-
+                 .FirstAsync(m => m.Id == customerId);
 
         public async Task<Customer> CreateCustomerAsync(Customer customer)
         {

@@ -1,4 +1,5 @@
-﻿@model Regen_2022.Models.Customer
+﻿
+@model Regen_2022.Models.Customer
 
 @{
     ViewData["Title"] = "Create";
@@ -17,7 +18,7 @@
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
-                <!--               Html.ListBoxFor(m => m.CustomerCategory, Model., new   {size=5}) -->
+                <select asp-for="BuyingCategory" asp-items="@Html.GetEnumSelectList<BuyingCategory>()"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
