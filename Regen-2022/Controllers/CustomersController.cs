@@ -132,13 +132,11 @@ namespace Regen_2022.Controllers
             {
                 return NotFound();
             }
-
             var customer = await _service.ReadAsync(id);
             if (customer == null)
             {
                 return NotFound();
             }
-
             return View(customer);
         }
 
@@ -151,14 +149,8 @@ namespace Regen_2022.Controllers
             {
                 return Problem("Entity set 'EshopDbContext.Customers'  is null.");
             }
-
-
             await _service.DeleteAsync(id);
-
-
             return RedirectToAction(nameof(Index));
         }
-
-       
     }
 }
