@@ -68,7 +68,6 @@ namespace Regen_2022.Controllers
             if (ModelState.IsValid)
             {
                await _service.CreateCustomerAsync(customer);
-                
                 return RedirectToAction(nameof(Index));
             }
             return View(customer);

@@ -11,7 +11,7 @@ namespace Regen_2022.Service
 
 
         public Task<Customer> ReadAsync(int? customerId);
-        public Task<Customer> CreateCustomerAsync(Customer customer);
+        public Task  CreateCustomerAsync(Customer customer);
         public Task   UpdateAsync(Customer Customer);
         public Task   DeleteAsync(int id);
 

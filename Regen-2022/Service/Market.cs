@@ -26,13 +26,13 @@ namespace Regen_2022.Service
                  .Include(customer => customer.CustomerCategory)
                  .FirstAsync(m => m.Id == customerId);
 
-        public async Task<Customer> CreateCustomerAsync(Customer customer)
+        public async Task  CreateCustomerAsync(Customer customer)
         {
             _context.Add(customer);
 
-            var id = await _context.SaveChangesAsync();
+              await _context.SaveChangesAsync();
 
-            return await ReadAsync(id);
+            
         }
 
         public async Task UpdateAsync(Customer Customer)

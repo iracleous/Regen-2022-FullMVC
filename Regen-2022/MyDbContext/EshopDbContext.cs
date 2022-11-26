@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Regen_2022.Models;
 
 namespace Regen_2022.MyDbContext
@@ -9,11 +10,19 @@ namespace Regen_2022.MyDbContext
         public DbSet<CustomerCategory> CustomerCategories => Set<CustomerCategory>();
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public EshopDbContext(DbContextOptions options) : base(options)
         {
-            string connectionString = "Data Source=(local);Initial Catalog=Eshop-Regen-2022;Integrated Security = true";
-            optionsBuilder.UseSqlServer(connectionString);
+
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        string connectionString = "Data Source=(local);Initial Catalog=Eshop-Regen-2022;Integrated Security = true; TrustServerCertificate=True;";
+        //        optionsBuilder.UseSqlServer(connectionString);
+        //    }
+        //}
 
     }
 }
