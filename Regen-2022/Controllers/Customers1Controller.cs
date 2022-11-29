@@ -81,7 +81,7 @@ namespace Regen_2022.Controllers
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCustomer", new { id = customer.Id }, customer);
+            return NoContent();
         }
 
         // DELETE: api/Customers1/5

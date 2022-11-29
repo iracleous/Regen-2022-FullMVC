@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; } = "";
+     //   public string photoPath{ get; set; } = "";
         public CustomerCategory CustomerCategory { get; set; } = new();
         public BuyingCategory BuyingCategory { get; set; }  
     }
